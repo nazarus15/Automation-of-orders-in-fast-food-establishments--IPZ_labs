@@ -1,0 +1,52 @@
+@startuml1
+left to right direction
+skinparam actorStyle awesome
+
+actor "Сервер" as fc
+
+rectangle "Передача даних до клієнта"{
+usecase (Список товарів) as UC1
+usecase (Номер замовлення) as UC2
+usecase (Чек) as UC3
+usecase (Дані щодо оплати) as UC4
+}
+
+fc -left-> UC1
+fc -left-> UC2
+fc -left-> UC3
+fc -up-> UC4
+
+
+
+rectangle Сервак{
+usecase (Обробка сигналу) as UC5
+usecase (Передача даних в БД) as UC6
+usecase (Перевірка правильності запиту) as UC7
+}
+
+fc --> UC5
+UC5 -right-> UC7
+UC5 --> UC6
+
+
+rectangle "База даних" {
+usecase (Читання товарів) as UC8
+usecase (Запис товарів) as UC9
+usecase (Видалення товарів) as UC10
+usecase (Редагування товарів) as UC13
+usecase (Запис замовлень в обробку) as UC11
+usecase (Читання замовлень в обробці) as UC12
+usecase (Редагування замовлень в обробці) as UC14
+}
+
+
+UC6 --> UC8
+UC6 --> UC9
+UC6 --> UC10
+UC6 --> UC11
+UC6 --> UC12
+UC6 --> UC13
+UC6 --> UC14
+
+
+@enduml

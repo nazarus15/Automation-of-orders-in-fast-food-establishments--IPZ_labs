@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+skinparam actorStyle awesome
+
+actor Персонал
+actor Сервер
+
+
+Персонал--> (Order)
+Персонал--> (Сommit)
+Персонал-->(Delete)
+
+
+
+(Order) --> Сервер
+(Сommit) --> Сервер
+(Delete) --> Сервер
+
+
+
+"Взяти замовлення на опрацювання " as (Order)
+"Підтвердити виконання" as (Сommit)
+"Відмінити виконання" as (Delete)
+
+@enduml

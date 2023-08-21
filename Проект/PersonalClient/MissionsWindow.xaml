@@ -1,0 +1,114 @@
+﻿<Window x:Class="PersonalClient.MissionsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PersonalClient"
+        mc:Ignorable="d"
+        
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" 
+        Height="550" 
+        Width="950" 
+        Left="0"
+        Top="520"
+        WindowStyle="SingleBorderWindow">
+
+    <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        
+        <Border MinWidth="400"
+                MaxWidth="550"
+                Margin="15"
+                Background="White"
+                VerticalAlignment="Center"
+                Padding="15"
+                CornerRadius="15">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30"
+                                  Color="LightGray"
+                                  ShadowDepth="0"/>
+            </Border.Effect>
+            
+            
+            <StackPanel>
+                
+                <TextBlock x:Name="Title"
+                            Text="Список замовлень" 
+                           FontSize="20" 
+                           FontWeight="Bold" 
+                           Margin="0 10 0 5" 
+                           HorizontalAlignment="Left"/>
+                <Rectangle Fill="#FF036407" Width="200" Height="2" HorizontalAlignment="Left" />
+
+                <Grid Margin="0 5 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock  x:Name="textBlock"
+                                Text=""
+                                Grid.ColumnSpan="2"/>
+                    <TextBlock  x:Name="OrdersBlock1"
+                                Text=""
+                                HorizontalAlignment="Center"
+                                Grid.Column="0"
+                                Foreground="Black"
+                                FontWeight="DemiBold"
+                    />
+                    <TextBlock  x:Name="OrdersBlock2"
+                                Text=""
+                                Grid.Column="1"
+                                Foreground="Black"
+                                FontWeight="DemiBold"
+                    />
+                </Grid>
+
+                <Grid>
+
+                    <TextBox    x:Name="textBoxPassword" 
+                                materialDesign:HintAssist.Hint="Введіть id замовлення на опрацювання" 
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                Text=""
+                                Width="350"
+                                Height="40"
+                                Visibility="Visible"
+                                HorizontalAlignment="Left"/>
+
+                    <Button x:Name="ButtonAcceptID"
+                            Content="Підтвердити"
+                            BorderBrush="#FF036407"
+                            Background="#FF036407"
+                            Foreground="White"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Width="150"
+                            Visibility="Visible"
+                            Click="EnterOrderButtonClick"/>
+
+                    <Button x:Name="ButtonRejectOrder"
+                            Content="Відхилити"
+                            BorderBrush="#FF036407"
+                            Background="#FF036407"
+                            Foreground="White"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Width="150"
+                            Visibility="Hidden"
+                            Click="RejectOrderButtonClick"/>
+                    <Button x:Name="ButtonAcceptOrder"
+                            Content="Готово"
+                            BorderBrush="#FF036407"
+                            Background="#FF036407"
+                            Foreground="White"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Width="150"
+                            Visibility="Hidden"
+                            Click="AcceptOrderButtonClick"/>
+                    
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

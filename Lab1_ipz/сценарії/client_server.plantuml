@@ -1,0 +1,24 @@
+@startuml1234
+left to right direction
+skinparam actorStyle awesome
+
+actor Клієнт
+actor Сервер
+
+
+
+Клієнт --> (Use)
+Клієнт --> (Dish)
+Клієнт --> (Buy)
+Клієнт --> (Exit)
+
+(Use) --> Сервер
+(Dish) --> Сервер
+(Buy) --> Сервер
+(Exit) --> Сервер
+
+"Вибір з собою чи в закладі" as (Use)
+"Вибір страви" as (Dish)
+"Оформлення замовлення" as (Buy)
+"Вихід" as (Exit)
+@enduml

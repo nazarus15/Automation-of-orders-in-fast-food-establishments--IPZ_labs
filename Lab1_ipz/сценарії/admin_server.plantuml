@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+skinparam actorStyle awesome
+
+actor Адмін
+actor Сервер
+
+Адмін--> (Authorization)
+Адмін--> (Add)
+Адмін--> (Delete)
+Адмін--> (Edit)
+
+
+(Authorization) --> Сервер
+(Add) --> Сервер
+(Delete) --> Сервер
+(Edit) --> Сервер
+
+
+"Авторизація" as (Authorization)
+"Додати страву" as (Add)
+"Видалити видалити" as (Delete)
+"Редагувати" as (Edit)
+
+@enduml
